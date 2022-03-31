@@ -1,11 +1,12 @@
+"Config Nvim
 
 syntax on
+syntax enable
 
 set number
 set mouse=a
 set numberwidth=1
 set clipboard=unnamedplus
-syntax enable
 set showcmd
 set ruler
 set cursorline
@@ -22,7 +23,7 @@ set shiftwidth=4
 set smartindent
 set splitbelow
 set splitright
-so ~/.vim/plugins.vim
+
 
 call plug#begin('~/.local/share/nvim/plugged')
 
@@ -46,7 +47,13 @@ Plug 'mattn/emmet-vim'
 Plug 'yuezk/vim-js' "sintaxis js
 Plug 'maxmellon/vim-jsx-pretty' "sintax para react 
 Plug 'scrooloose/nerdcommenter'
-Plug 'voldikss/vim-floaterm'
+"Plug 'voldikss/vim-floaterm'
+Plug 'tpope/vim-surround'
+Plug 'yggdroot/indentline'
+Plug 'mhinz/vim-signify'
+Plug 'junegunn/fzf'
+Plug 'junegunn/fzf.vim'
+Plug 'terryma/vim-multiple-cursors'
 
 "Autocomplete
 Plug 'sirver/ultisnips'
@@ -63,7 +70,6 @@ endif
 
 colorscheme gruvbox
 let g:gruvbox_contrast_dark = "hard"
-let NERDTreeQuitOnOpen=1
 
 let mapleader=" "
 
@@ -78,14 +84,22 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 
 "Mapear Atajos
 nmap <Leader>s <Plug>(easymotion-s2)
-nmap <Leader>as :NERDTreeFind<CR>
+nmap <Leader>nt :NERDTreeFind<CR>
 nmap <Leader>cc <Plug>NERDCommenterToggle
 nmap <Leader>cu <Plug>NERDCommenterUncomment
 vmap <Leader>cc <Plug>NERDCommenterToggle
-"nmap <Leader>t :term<CR>
-"nmap <Leader>f :Files<CR>
+
+"Remaps, this is where the magic of vim happends
+map <leader>h :wincmd h<CR>
+map <leader>j :wincmd j<CR> 
+map <leader>k :wincmd k<CR>
+map <leader>l :wincmd l<CR>
+
+"Map para abrir el buscador de archivos
+map <Leader>p :Files<CR>
 
 "Atajos git
+
 "Git status
 nmap <Leader>gs :G<CR>
 "Git add
@@ -98,7 +112,7 @@ nmap <Leader>gb :Git blame<CR>
 nmap <Leader>gl :Git log<CR> 
 
 "Terminal
-nmap <Leader>t :FloatermNew<CR>
+"nmap <Leader>t :FloatermNew<CR>
 
 "Atajos para guardar y cerrar
 nmap <Leader>w :w<CR>
@@ -120,7 +134,7 @@ let g:deoplete#enable_at_startup=1
 "coc Config
 let g:coc_global_extensions = [
   \ 'coc-emoji',
-  "\ 'coc-eslint',
+  \ 'coc-eslint',
   \ 'coc-prettier',
   \ 'coc-tsserver',
   \ 'coc-tslint',
