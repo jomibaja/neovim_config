@@ -82,6 +82,9 @@ autocmd vimenter * NERDTree"
 "Cerrar vim cuando solo queda NerdTree
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
+"Cerrar NERDTree cuando abro archivo
+let NERDTreeQuitOnOpen=1
+
 "Mapear Atajos
 nmap <Leader>s <Plug>(easymotion-s2)
 nmap <Leader>nt :NERDTreeFind<CR>
