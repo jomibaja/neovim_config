@@ -113,6 +113,8 @@ nmap <Leader>gc :Git commit<CR>
 nmap <Leader>gb :Git blame<CR> 
 "Git log
 nmap <Leader>gl :Git log<CR> 
+"Git push
+nmap <Leader>ps :Git push<CR> 
 
 "Terminal
 "nmap <Leader>t :FloatermNew<CR>
